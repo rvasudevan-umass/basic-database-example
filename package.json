@@ -1,0 +1,22 @@
+{
+  "name": "basic-database-example",
+  "version": "1.0.0",
+  "description": "Basic Database example using SQlite3 for ART 390U",
+  "license": "ISC",
+  "author": "Roopa Vasudevan",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@sqlitecloud/drivers": "^1.0.837",
+    "body-parser": "^2.2.2",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10"
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Database Example for ART 390U</title>
+
+        <style>
+            .formElement {
+                margin-bottom:1%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Database Example</h1>
+        <p>Fill out the form to be included in the database.</p>
+
+        <!-- Form for posts. Note the name attribute here is what our Node file uses to save the data. -->
+        <form action="/" method="post">
+            <div class="formElement">
+                <label for="name">Name: </label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="formElement">
+                <label for="year">Graduation Year: </label>
+                <input type="text" id="year" name="year">
+            </div>
+
+            <div class="formElement">
+                <label for="year">Major: </label>
+                <input type="text" id="major" name="major">
+            </div>
+
+            <div class="formElement">
+                <label for="color">Favorite Color: </label>
+                <input type="text" id="color" name="color">
+            </div>
+
+            <input type="submit" id="submit" value="Submit">
+
+        </form>
+
+        <!-- Loop through all our database posts and display them underneath the form. This gets updated every time a new submission is added. -->
+        <ul>
+            <% users.forEach(function(user) { %>
+                <li><%= user.id %> - <%= user.name %> - <%= user.year %> - <%= user.major %> - <%= user.color %></li>
+            <% }); %>
+        </ul>
+    </body>
+</html>
