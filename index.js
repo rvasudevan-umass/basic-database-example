@@ -3,7 +3,7 @@ const app = express();
 const port = 8080;
 const path = require('path');
 
-app.use(express.static('/public')); //gives you access to static files in the "public" folder
+app.use(express.static(path.join(__dirname, 'public'))); //gives you access to static files in the "public" folder
 app.set('view engine', 'ejs'); //uses EJS as template for views
 app.use(express.urlencoded({ extended: true })); //middleware to parse the form data from the HTML body
 
