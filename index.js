@@ -3,13 +3,13 @@ const app = express();
 const port = 8080;
 const path = require('path');
 
-app.use(express.static('public')); //gives you access to static files in the "public" folder
+app.use(express.static('/public')); //gives you access to static files in the "public" folder
 app.set('view engine', 'ejs'); //uses EJS as template for views
 app.use(express.urlencoded({ extended: true })); //middleware to parse the form data from the HTML body
 
 const { DatabaseSync } = require('node:sqlite'); //enable sqlite in Node
-const db = new DatabaseSync('database.db', { readonly: false }); //create/open connection with the database file
-// const db = new DatabaseSync('/data/database.db', { readonly: false }); //for persistent volume on Railway. Uncomment this and comment out the previous line prior to deploying your application.
+// const db = new DatabaseSync('database.db', { readonly: false }); //create/open connection with the database file
+const db = new DatabaseSync('/data/database.db', { readonly: false }); //for persistent volume on Railway. Uncomment this and comment out the previous line prior to deploying your application.
 
 //create the database and specify the columns you want to include. SQLite only has a few datatypes we can use, available here: https://www.sqlite.org/datatype3.html 
 
